@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from ninja import NinjaAPI
+from .models import Movie
+api = NinjaAPI()
 
-# Create your views here.
+@api.get("/MovieList/")
+def MovieList(request):
+    return {"movies": Movie.objects.all().order_by('ranking').values()}
