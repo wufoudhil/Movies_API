@@ -7,7 +7,7 @@ api = NinjaAPI()
 class MoviSchema(ModelSchema):
     class Config:
         model = Movie
-        model_fields = ['name', 'protagonists', 'poster', 'start_date', 'status', 'ranking']
+        model_fields = ['name', 'protagonists', 'poster', 'trailer', 'start_date', 'status', 'ranking']
 
 @api.get("/MovieList/", response=List[MoviSchema])
 def MovieList(request):
