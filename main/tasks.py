@@ -13,4 +13,4 @@ def sample_task():
     for m in mvznmbr:
         old_rank = Movie.objects.filter(id=m['id']).values('ranking')[0]['ranking']
         Movie.objects.filter(id=m['id']).update(ranking = int(old_rank+10))
-    logger.info(mvznmbr)#"Movies, from creation (status='coming_up') to launch (status='running') have been ranked by 10 more.")
+    logger.info("Movies, from creation (status='coming_up') to launch (status='running') have been ranked by 10 more.")
