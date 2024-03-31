@@ -19,3 +19,6 @@ def test_view(client):
    assert response.status_code == 200
 
 
+@pytest.mark.celery(result_backend="django-db")
+def increase_rank(celery_app, celery_worker):  
+    assert increase_rank.delay().get(timeout=10) == "Done"
