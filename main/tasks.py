@@ -8,7 +8,7 @@ logger = get_task_logger(__name__)
 
 
 @shared_task
-def sample_task():
+def increase_rank():
     mvznmbr = Movie.objects.filter(status__in  = ['coming-up', 'starting', 'running']).values('id')
     for m in mvznmbr:
         old_rank = Movie.objects.filter(id=m['id']).values('ranking')[0]['ranking']

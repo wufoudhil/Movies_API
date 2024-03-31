@@ -15,8 +15,8 @@ class Movie(models.Model):
     poster = models.ImageField(null=True, blank=True)
     trailer = models.URLField(null=True, blank=True)
     start_date = models.DateField(auto_now_add=True)
-    status = models.CharField(max_length=9, choices=status)
-    ranking = models.IntegerField()
+    status = models.CharField(max_length=9, choices=status, null=True, blank=True)
+    ranking = models.IntegerField(null=True, blank=True)
 
 
     def __str__(self):

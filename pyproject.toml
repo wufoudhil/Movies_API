@@ -16,8 +16,12 @@ django-ninja = "1.1.0"
 django-redis = "5.4.0"
 poetry = "1.8.2"
 redis = "5.0.3"
+pytest-django==4.8.0
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "movies.settings"
