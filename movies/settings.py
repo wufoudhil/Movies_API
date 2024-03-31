@@ -147,7 +147,7 @@ CELERY_RESULT_BACKEND = 'django-db'
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 CELERY_BEAT_SCHEDULE = {
-    "increase_rank": {
+    "sample_task": {
         "task": "main.tasks.increase_rank",
         "schedule": crontab(minute="*/5"),
     },
